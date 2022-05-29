@@ -1,5 +1,3 @@
-const Matrix = require("./Matrix");
-
 class GoldRush {
   constructor(rows, columns) {
     this.board = new Matrix(rows, columns);
@@ -30,7 +28,6 @@ class GoldRush {
         if (this.player1Row < this.boardRows) {
           this.board.matrix[this.player1Row][this.player1Column] = ".";
           this.player1Row += 1;
-
           this.increaseScore(1, this.player1Row, this.player1Column);
           this.board.matrix[this.player1Row][this.player1Column] = 1;
         }
@@ -126,17 +123,17 @@ class GoldRush {
   }
 }
 
-const game = new GoldRush(5, 5);
-game.print();
-game.movePlayer(1, "down");
-game.movePlayer(2, "up");
-game.print();
-game.movePlayer(1, "right");
-game.movePlayer(2, "left");
-game.print();
-game.movePlayer(1, "up");
-game.movePlayer(2, "down");
-game.print();
-game.movePlayer(1, "left");
-game.movePlayer(2, "right");
-game.print();
+// const game = new GoldRush(5, 5);
+// game.print();
+// game.movePlayer(1, "down");
+// game.movePlayer(2, "up");
+// game.print();
+// game.movePlayer(1, "right");
+// game.movePlayer(2, "left");
+// game.print();
+// game.movePlayer(1, "up");
+// game.movePlayer(2, "down");
+// game.print();
+// game.movePlayer(1, "left");
+// game.movePlayer(2, "right");
+// game.print();

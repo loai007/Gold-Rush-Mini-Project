@@ -52,4 +52,3 @@ class Matrix {
 }
 
 /* Do not remove the exports below */
-module.exports = Matrix;
