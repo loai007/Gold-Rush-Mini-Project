@@ -9,6 +9,7 @@ class GoldRush {
     this.player2Column = columns - 1;
     this.player1Score = 0;
     this.player2Score = 0;
+    this.COIN = 10;
     this.generateCoins();
   }
   print() {
@@ -19,8 +20,8 @@ class GoldRush {
 
   increaseScore(playerNumber, row, column) {
     if (this.board.matrix[row][column] === "c")
-      if (playerNumber === 1) this.player1Score += 10;
-      else this.player2Score += 10;
+      if (playerNumber === 1) this.player1Score += this.COIN;
+      else this.player2Score += this.COIN;
   }
   movePlayer1(direction) {
     switch (direction) {
@@ -114,7 +115,7 @@ class GoldRush {
     const coinLimit = this.boardRows;
     for (let row = 0; row <= this.boardRows; row++) {
       for (let column = 0; column <= this.boardColumns; column++) {
-        const isCoin = Math.floor(Math.random() * 25) > coinLimit;
+        const isCoin = Math.floor(Math.random() * 25) > coinLimit; // move to diff func
         if (isCoin && typeof this.board.matrix[row][column] !== "number") {
           this.board.matrix[row][column] = "c";
         }
